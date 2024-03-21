@@ -1,23 +1,25 @@
-import logo from './logo.svg';
+
 import './App.css';
+import Navbar from './components/Navbar';
+import EmployeeForm from './components/EmployeeForm';
+import { Routes,Route } from 'react-router-dom';
+import EmployeeDashboard from './components/EmployeeDashboard';
+import Home from './components/Home';
+
+
+
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <Navbar backgroundImage={photo_2} />  */}
+      <Navbar/> 
+     <Routes>
+        <Route path="/" element={<EmployeeDashboard/>}/>   
+       <Route path="/form" element={<EmployeeForm/>}/>
+       <Route path="/list" element={<Home/>}/>
+     </Routes>
     </div>
   );
 }
